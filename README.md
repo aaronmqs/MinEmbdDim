@@ -28,4 +28,4 @@ Before starting, make sure you've met the following requirements:
 
 This project is under license. See the [LICENSE](LICENSE) file for more details.
 
-[⬆ Back to the top](https://github.com/aaronmqs/MinEmbdDim/README.md#study-on-reliable-estimation-of-minimum-embedding-dimension-through-statistical-analysis-of-nearest-neighbors)<br>
+[⬆ Back to the top](https://github.com/aaronmqs/MinEmbdDim#study-on-reliable-estimation-of-minimum-embedding-dimension-through-statistical-analysis-of-nearest-neighbors)<br>
