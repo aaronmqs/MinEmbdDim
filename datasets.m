@@ -4,7 +4,7 @@
 
 clear, clc, close all;
 
-%N = 6*10^4; % number of point samples for white random time series
+% N = 6*10^4; % number of point samples for white random time series
 N = 3*10^3;
 
 %% Purely white random time series
