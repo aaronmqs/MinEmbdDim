@@ -1,6 +1,6 @@
 clear; clc; close all;
 
-path_ = "C:\Users\aaron\OneDrive\Área de Trabalho\Backup do Drive\2022.1\TDA\codes\data\";
+path_ = pwd + "\data\";
 
 Xfnn_lorenz = readmatrix(path_ + "Xfnn_lorenz");
 Xfnn_duffing = readmatrix(path_ + "Xfnn_duffing");

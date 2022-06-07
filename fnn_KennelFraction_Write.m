@@ -30,7 +30,7 @@ for i = 1:11
 
 end
 
-path_ = "C:\Users\aaron\OneDrive\Área de Trabalho\Backup do Drive\2022.1\TDA\codes\data\";
+path_ = pwd + "\data\";
 writematrix(Xfnn_lorenz,path_ + "Xfnn_lorenz");
 writematrix(Xfnn_duffing,path_ + "Xfnn_duffing");
 writematrix(Xfnn_ar(:,:,1),path_ + "Xfnn_ar1");
