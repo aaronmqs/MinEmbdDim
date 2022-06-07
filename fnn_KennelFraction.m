@@ -1,4 +1,4 @@
-function Xfnn = FNN_Abarbanel(minDim, maxDim, tau, ts, Rtol,Atol)
+function Xfnn = FNN_KennelFraction(minDim, maxDim, tau, ts, Rtol,Atol)
 
 % Function provided by Professor Dr. Firas Khasawneh (05/10/2022)
 % Minor changes and comments have been made to the code for study purposes
@@ -42,18 +42,21 @@ for i = 1:ndim + 1
     
     % Calculate the false nearest neighbor ratio for each dimension
     if i > 1
-        D_mp1 = sqrt(sum((tsRecon(ind_m,:)-tsRecon(ind,:)) .^2,2)); % Distance between n and k(n) in m+1 dimensions
+        D_mp1 = sqrt(sum((tsRecon(ind_m,:)-tsRecon(ind,:)) .^2,2)); % sqrt(epsilon_i^2 + delta_i^2)
         
         % Criteria #1: increase in distance between neighbors is large
-        num1 = heaviside(abs(tsRecon(ind_m,end) - tsRecon(ind,end)) ./ Dm - Rtol);% increase in distance in going from dimension m to m+1
+        num1 = heaviside(abs(tsRecon(ind_m,end) - tsRecon(ind,end)) ./ Dm - Rtol);% delta_i > r*epsilon_i
         
-        % Criteria #2: nearest neighbor not necessarily close to y(n)
-        num2 = heaviside(Atol -  D_mp1/st_dev);
+        % Criteria #2: distance in (d+1)-dimension is large
+        num2 = heaviside(D_mp1/st_dev - Atol); % epsilon_i^2 + delta_i^2 > sigma^2*a^2
 
-        num  = sum(num1 .* num2);
-        den = sum(num2);
+        num  = (num1 + num2);
+        c = num > 1;
+        num(c) = 1;
+        num = sum(num);
+        den = length(ind_m);
         
-        Xfnn(i-1) = num/den * 100; % Percent of false nearest neighbors
+        Xfnn(i-1) = (num/den) * 100; % Percent of false nearest neighbors
     end
     % Save the index to D and k(n) in dimension m for comparison with the
     % same distance in m+1 dimension
