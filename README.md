@@ -4,14 +4,6 @@
 
 ![untitled](https://user-images.githubusercontent.com/68541168/167712544-010e4509-6ffe-4bfd-8a70-bc41c3cd3fa2.png)
 
-### Tasks
-
-The project is still under development and the next updates will focus on the following tasks:
-
-- [x] Generating the Data Sets used for analysis
-- [ ] Improving theoretical understanding on False Nearest Neighbors through the paper "Local false nearest neighbors and dynamical dimensions from observed chaotic data", 1993, Abarbanel & Kennel
-- [ ] Reproducing the results obtained in the main paper
-
 ## 💻 Requirements to start this project:
 
 Before starting, make sure you've met the following requirements:
